@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyűjtemények</title>
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header></header>
+
+    <h1 class="text-center">Gyűjtemények</h1>
+
+    <div class="container collection_container" id="collection_container">
+
+        <div class="row flexbox">
+            <div class="col-sm-4 image">
+                <img src="images/tea.jpg" class="img-rounded img-responsive" alt="tea">
+            </div>
+
+            <div class="col-sm-8 flex">
+                <div class="flex_row">
+                    <span class="title">Tea</span>
+                    <div id="collection_rename" class="flex_row" style="display: none">
+                        <form autocomplete="off">
+                            <input type="text" class="form-control input-lg" placeholder="Új cím">
+                        </form>
+                        <button class="col-sm-1 save" id="rename_collection_btn"><span class="bi bi-check-lg"></span></button>
+                        <button class="col-sm-1 not_show" id="hide_collection_btn"><span class="bi bi-dash"></span></button>
+                    </div>
+                    <button type='button' class="rename_collection_btn"><span class="bi bi-pencil"></span></button>
+                </div>
+                <div class="topic">Italok</div>
+                <div class="date">2024.07.04.</div>
+            </div>
+        </div>
+
+        <div class="container elements_container" style="display: none">
+            <div class="row element">
+                <div class="col-sm-2 checkbox delete">
+                    <label><input type="checkbox"></label>
+                </div>
+
+                <div class="col-sm-7 flex">
+                    <div class="title green">Gyümölcs tea</div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="col-sm-3 more dropdown-toggle" data-toggle="dropdown" type='button'>
+                        <span class="bi bi-chevron-down"></span>
+                    </button>
+                    <ul class="dropdown-menu actions">
+                        <li><button class="dropdown_btn move" type='button'>Áthelyezés</button></li>
+                        <li class="divider"></li>
+                        <li><button class="dropdown_btn rename" type='button'>Átnevezés</button></li>
+                        <li class="divider"></li>
+                        <li><button class="dropdown_btn remove" type='button'>Törlés</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row element">
+                <div class="col-sm-2 checkbox delete">
+                    <label><input type="checkbox"></label>
+                </div>
+
+                <div class="col-sm-7 flex">
+                    <div class="title green">Zöld tea</div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="col-sm-3 more dropdown-toggle" data-toggle="dropdown" type='button'>
+                        <span class="bi bi-chevron-down"></span>
+                    </button>
+                    <ul class="dropdown-menu actions">
+                        <li><button class="dropdown_btn move" type='button'>Áthelyezés</button></li>
+                        <li class="divider"></li>
+                        <li><button class="dropdown_btn rename" type='button'>Átnevezés</button></li>
+                        <li class="divider"></li>
+                        <li><button class="dropdown_btn remove" type='button'>Törlés</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row new_element" id="rename_element" style="display: none">
+                <form class="col-sm-10" autocomplete="off">
+                    <input type="text" class="form-control input-lg" placeholder="Új cím">
+                </form>
+                <button class="col-sm-1 save" id="rename_element_btn"><span class="bi bi-check-lg"></span></button>
+                <button class="col-sm-1 not_show" id="hide_rename_btn"><span class="bi bi-dash"></span></button>
+            </div>
+
+            <div class="row new_element" id="move_element" style="display: none">
+                <form class="col-sm-10" autocomplete="off">
+                    <input type="text" class="form-control input-lg" placeholder="Gyűjtemény címe">
+                </form>
+                <button class="col-sm-1 save" id="move_element_btn"><span class="bi bi-check-lg"></span></button>
+                <button class="col-sm-1 not_show" id="hide_move_btn"><span class="bi bi-dash"></span></button>
+            </div>
+
+            <div class="row new_element" id="new_element" style="display: none">
+                <form class="col-sm-11" autocomplete="off">
+                    <input type="text" class="form-control input-lg" id="element_title" placeholder="Cím">
+                    <input type="text" class="form-control input-lg" id="element_topic" placeholder="Témakör">
+                    <input type="date" class="form-control input-lg" id="element_date">
+                </form>
+                <button class="col-sm-1 save" id="new_element_btn"><span class="bi bi-check-lg"></span></button>
+            </div>
+
+            <button type="button" class="add_element"><span class="bi bi-plus"></span></button>
+        </div>
+
+        <div class="row flexbox">
+            <div class="col-sm-4 image">
+                <img src="images/pokemons.jpg" class="img-rounded img-responsive" alt="pokemon">
+            </div>
+            <div class="col-sm-8 flex">
+                <div class="flex_row">
+                    <span class="title">Pokémon</span>
+                    <button type='button' class="rename_collection_btn"><span class="bi bi-pencil"></span></button>
+                </div>
+                <div class="topic">Játék</div>
+                <div class="date">2024.01.11.</div>
+            </div>
+        </div>
+
+        <div class="container elements_container" style="display: none">
+            <div class="row element">
+                <div class="col-sm-2 checkbox delete">
+                    <label><input type="checkbox"></label>
+                </div>
+
+                <div class="col-sm-7 flex">
+                    <div class="title green">Pikachu</div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="col-sm-3 more dropdown-toggle" data-toggle="dropdown" type='button'>
+                        <span class="bi bi-chevron-down"></span>
+                    </button>
+                    <ul class="dropdown-menu actions">
+                        <li><button class="dropdown_btn move" type='button'>Áthelyezés</button></li>
+                        <li class="divider"></li>
+                        <li><button class="dropdown_btn rename" type='button'>Átnevezés</button></li>
+                        <li class="divider"></li>
+                        <li><button class="dropdown_btn remove" type='button'>Törlés</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <button type="button" class="add_element"><span class="bi bi-plus"></span></button>
+        </div>
+
+        <div class="row flexbox">
+            <div class="col-sm-4 image">
+                <img src="images/lego.png" class="img-rounded img-responsive" alt="lego">
+            </div>
+            <div class="col-sm-8 flex">
+                <div class="flex_row">
+                    <span class="title">Lego</span>
+                    <button type='button' class="rename_collection_btn"><span class="bi bi-pencil"></span></button>
+                </div>
+                <div class="topic">Játék</div>
+                <div class="date">2021.08.05.</div>
+            </div>
+        </div>
+
+        <div class="container elements_container" style="display: none">
+            <div class="row element">
+                <div class="col-sm-2 checkbox delete">
+                    <label><input type="checkbox"></label>
+                </div>
+
+                <div class="col-sm-7 flex">
+                    <div class="title green">Lego kísértetház</div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="col-sm-3 more dropdown-toggle" data-toggle="dropdown" type='button'>
+                        <span class="bi bi-chevron-down"></span>
+                    </button>
+                    <ul class="dropdown-menu actions">
+                        <li><button class="dropdown_btn move" type='button'>Áthelyezés</button></li>
+                        <li class="divider"></li>
+                        <li><button class="dropdown_btn rename" type='button'>Átnevezés</button></li>
+                        <li class="divider"></li>
+                        <li><button class="dropdown_btn remove" type='button'>Törlés</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <button type="button" class="add_element"><span class="bi bi-plus"></span></button>
+        </div>
+
+    </div>
+
+    <button id="new_collection" class="collection_modify_btn" type='button'>
+        Új gyűjtemény létrehozása
+        <span class="bi bi-chevron-down"></span>
+    </button>
+
+    <form style="display: none;" id="collection_form" autocomplete="off">
+        <input type="text" class="form-control input-lg" id="collection_title" placeholder="Cím">
+        <input type="text" class="form-control input-lg" id="topic" placeholder="Témakör">
+        <input type="date" class="form-control input-lg" id="date">
+
+        <input type="file" accept="image/*" id="real_file_upload" style="display: none">
+        <div class="file-upload">
+            <button id="fake_file_upload" type='button'>
+                <span class="bi bi-card-image"></span>
+            </button>
+            <span class="text" id="pic_name">Kép tallózása</span>
+        </div>
+        <img src="" alt="uploaded-picture" id="img" style="display: none">
+
+        <input type="button" value="Létrehozás" class="collection_modify_btn" onclick="addCollection()">
+    </form>
+
+    <button id="delete_many" class="collection_modify_btn" type='button'>Kijelölt elemek törlése</button>
+
+    <footer></footer>
+<script>
+    $(document).ready(function(){
+        // I'm using event delegation here
+        // -> The event listener will be bound to the dynamically created html elements too.
+        // I store the click events in a map:
+        // The key is the jquery object where the click happened & the value is the function to call.
+        $("#collection_container").click(function (event){
+            let $target = $(event.target);
+            const events = new Map();
+
+            events.set($target.closest('.add_element'), newElementClicked)
+                .set($target.closest('#new_element_btn'), addElement)
+                .set($target.closest('.move'), showMoveElementInput)
+                .set($target.closest('#move_element_btn'), moveElement)
+                .set($target.closest('#hide_move_btn'), hideMoveElementInput)
+                .set($target.closest('.rename'), showRenameElementInput)
+                .set($target.closest('#rename_element_btn'), renameElement)
+                .set($target.closest('#hide_rename_btn'), hideRenameElementInput)
+                .set($target.closest('.remove'), removeElement)
+                .set($target.closest('.rename_collection_btn'), showRenameCollectionInput)
+                .set($target.closest('#rename_collection_btn'), renameCollection)
+                .set($target.closest('#hide_collection_btn'), hideRenameCollectionInput)
+                .set($target.closest('form'), dontSubmit)
+                .set($target.closest(".flexbox"), collectionClicked);
+
+            for (let [key, value] of events){
+                if (key.length){
+                    value(key);
+                    break;
+                }
+            }
+        });
+
+        // Change the icon for the "add new collection" button when clicked.
+        // Also reset the form when it's not visible.
+        $("#new_collection").click(function(){
+
+            $("#collection_form").slideToggle(function (){
+                $(this).trigger("reset");
+                $("#img").attr("src", "");
+                $('#pic_name').text("Kép tallózása");
+            });
+            let $icon = $(this).children("span");
+
+            if ($icon.attr("class") === "bi bi-chevron-up"){
+                $icon.removeClass("bi bi-chevron-up").addClass("bi bi-chevron-down");
+            } else {
+                $icon.removeClass("bi bi-chevron-down").addClass("bi bi-chevron-up");
+            }
+        });
+
+        // Show the chosen file name & set the hidden img tag's src to the URL of the image
+        // (so that it can be retrieved after the "create" button is clicked).
+        $("#real_file_upload").on("change", function (){
+            const file = this.files[0];
+            $("#pic_name").text(file.name);
+            $("#img").attr("src", URL.createObjectURL(file));
+        });
+
+        // When the 'fake' file upload button is clicked, trigger the real (& hidden) file input.
+        $("#fake_file_upload").click(function (){
+            $("#real_file_upload").click();
+        });
+
+        // Removes checked elements from the DOM.
+        $("#delete_many").click(function (){
+            $(".delete").find("input").each(function (){
+                if ($(this).is(':checked')){
+                    let $element = $(this).parent().parent().parent();
+                    hideElementModifyInputs($element);
+                    $element.remove();
+                }
+            });
+        });
+
+    });
+
+    // Ensures that if you press Enter on a form it won't get submitted & the page won't reload
+    function dontSubmit(thiss){
+        thiss.submit(false);
+    }
+
+    // When the "+" button is clicked, we remove the 'new element field' from the DOM and place it before the clicked button.
+    // This way ony one 'new element field' exists at the time (either hidden or visible).
+    // If the input field is not visible its value is reset.
+    function newElementClicked(thiss){
+        let $new_element = $("#new_element");
+        let $icon = thiss.children("span");
+        let $input = $new_element.find("input");
+
+        if ($icon.attr("class") === "bi bi-plus" && $new_element.is(":visible")){
+
+            let $span = $new_element.next().children("span");
+            $span.removeClass("bi bi-dash").addClass("bi bi-plus");
+            $icon.removeClass("bi bi-plus").addClass("bi bi-dash");
+            $input.val("");
+
+        } else if ($icon.attr("class") === "bi bi-plus"){
+            $icon.removeClass("bi bi-plus").addClass("bi bi-dash");
+            $new_element.slideToggle();
+        } else {
+            $icon.removeClass("bi bi-dash").addClass("bi bi-plus");
+            $new_element.slideToggle(function (){
+                $input.val("");
+            });
+        }
+
+        $new_element.remove();
+        thiss.before($new_element);
+    }
+
+    // If you click on a collection to close its content, then reset everything to its default state
+    // -> unchecking the checkboxes, closing the new element input and resetting the input's value.
+    // This function does that reset.
+    function collectionClicked(thiss){
+        if ($('#collection_rename').find("input").is(":focus")){
+            return;
+        }
+
+        let $elements_container = thiss.next();
+        let $span = $elements_container.children(".add_element").children("span");
+
+        if ($elements_container.is(":visible")){
+
+            $elements_container.slideUp(function (){
+                $elements_container.find(".delete input").prop('checked', false);
+
+                let $new_element = $elements_container.children("#new_element");
+                $new_element.hide();
+
+                if ($span.attr("class") === "bi bi-dash"){
+                    $span.removeClass("bi bi-dash").addClass("bi bi-plus");
+                }
+                $new_element.find("input").val("");
+                hideMoveElementInput();
+                hideRenameElementInput();
+            });
+        } else {
+            $elements_container.slideDown();
+        }
+    }
+
+    // Add the html for the new collection to the DOM & reset the form.
+    function addCollection(){
+        let $img = $("#img");
+        let title = $("#collection_title").val();
+        let topic = $("#topic").val();
+        let date = $("#date").val();
+
+        if (!(title && topic && date && $img.attr("src"))){
+            alert("Mindent meg kell adni az új gyűjtemény létrehozásához!");
+        } else {
+            let $container = $('<div class="row flexbox"></div>');
+            let $image = $('<div class="col-sm-4 image"></div>')
+                .append($('<img class="img-rounded img-responsive" alt="uj">').attr("src" , $img.attr("src")));
+
+            let $title = $('<span class="title"></span>').text(title);
+            let $button = $('<button type="button" class="rename_collection_btn"><span class="bi bi-pencil"></span></button>');
+            let $flex_row = $('<div class="flex_row"></div>');
+            $flex_row.append($title, $button);
+
+            let $fields = $('<div class="col-sm-8 flex"></div>')
+                .append($flex_row)
+                .append($('<div class="topic"></div>').text(topic))
+                .append($('<div class="date"></div>').text(date));
+            $container.append($image, $fields);
+
+            let $elements_container = $('<div class="container elements_container" style="display: none">' +
+                '<button type="button" class="add_element"><span class="bi bi-plus"></span></button></div>');
+
+            $("#collection_container").append($container, $elements_container);
+
+            $('#collection_form').trigger("reset");
+            $img.attr("src", "");
+            $('#pic_name').text("Kép tallózása");
+        }
+    }
+
+    // When the check mark is clicked, the new element is inserted in the DOM
+    // (if the element title is not empty).
+    function addElement(thiss){
+        let $title = thiss.prev().children("#element_title");
+        let $topic = thiss.prev().children("#element_topic");
+        let $date = thiss.prev().children("#element_date");
+
+        if ($title.val()){
+            let $container_div = $('<div class="row element"></div>');
+            let $checkbox = $('<div class="col-sm-2 checkbox delete"><label><input type="checkbox"></label></div>');
+
+            let $info_container = $('<div class="col-sm-7 flex"></div>');
+            let $ti = $('<div class="title green"></div>').text($title.val());
+            $info_container.append($ti);
+
+            if ($topic.val()){
+                let $to = $('<div class="topic green"></div>').text($topic.val());
+                $info_container.append($to);
+            }
+            if ($date.val()){
+                let $d = $('<div class="date"></div>').text($date.val());
+                $info_container.append($d);
+            }
+
+            let $dropdown = $('<div class="dropdown">' +
+                '             <button class="col-sm-3 more dropdown-toggle" data-toggle="dropdown" type=\'button\'>' +
+                '                 <span class="bi bi-chevron-down"></span>' +
+                '             </button><ul class="dropdown-menu actions">' +
+                '                 <li><button class="dropdown_btn move" type=\'button\'>Áthelyezés</button></li>' +
+                '                 <li class="divider"></li>' +
+                '                 <li><button class="dropdown_btn rename" type=\'button\'>Átnevezés</button></li>' +
+                '                 <li class="divider"></li>' +
+                '                 <li><button class="dropdown_btn remove" type=\'button\'>Törlés</button></li>' +
+                '             </ul></div>');
+
+            $container_div.append($checkbox, $info_container, $dropdown);
+            thiss.parent().before($container_div);
+            thiss.prev().trigger("reset");
+        } else {
+            alert("Meg kell adni az új elem címét!");
+        }
+    }
+
+    // Shows the input field where you can give the new title of the collection.
+    function showRenameCollectionInput(thiss){
+        let $collection_rename = $('#collection_rename');
+        let $input = $collection_rename.find("input");
+
+        if ($collection_rename.is(":visible")){
+            $collection_rename.next().show();
+        }
+
+        $input.val("");
+        $collection_rename.remove();
+        thiss.hide().before($collection_rename)
+        $collection_rename.show();
+    }
+
+    // Renames the collection's title.
+    function renameCollection(thiss){
+        let $collection_rename = $('#collection_rename');
+        let $input = $collection_rename.find("input");
+
+        if ($input.val()){
+            $collection_rename.prev().text($input.val());
+        }
+        hideRenameCollectionInput(thiss);
+    }
+
+    // Hides the input field for renaming a collection.
+    function hideRenameCollectionInput(thiss){
+        $('#collection_rename').hide();
+        thiss.parent().next().show();
+    }
+
+    // Shows the input field where you can give the title of the collection you want to move the element to.
+    function showMoveElementInput(thiss){
+        let $element = thiss.closest('.element');
+        let $move_element = $('#move_element');
+        let $input = $move_element.find("input");
+
+        $input.val("");
+        $move_element.remove();
+        $element.after($move_element);
+        $move_element.slideDown();
+    }
+
+    // Moves the element to the given collection.
+    // (checks the collection titles and if one matches the destination, the element will be moved there)
+    function moveElement(thiss){
+        let $move_element = $('#move_element');
+        let $collection = $move_element.find("input");
+        let $element = $move_element.prev();
+
+        if ($element.attr("class") !== "row element"){
+            $element = $element.prev();
+        }
+
+        if ($collection.val()){
+            $('.title').each(function (){
+                if ($(this).text().toLowerCase() === $collection.val().toLowerCase()){
+
+                    let $destination = $(this).closest('.flexbox').next();
+                    $element.remove();
+
+                    if ($destination.children(".element").length){
+                        $destination = $destination.children(".element").last();
+                        $destination.after($element);
+                    } else {
+                        $destination = $destination.children("button");
+                        $destination.before($element);
+                    }
+                    return false;
+                }
+            });
+
+            $collection.val("");
+            hideMoveElementInput();
+        }
+    }
+
+    // Hides the input field for moving an element.
+    function hideMoveElementInput(){
+        $('#move_element').slideUp();
+    }
+
+    // Shows the input field where you can give the new title of the element.
+    function showRenameElementInput(thiss){
+        let $element = thiss.closest('.element');
+        let $rename_element = $('#rename_element');
+        let $input = $rename_element.find("input");
+
+        $input.val("");
+        $rename_element.remove();
+        $element.after($rename_element);
+        $rename_element.slideDown();
+    }
+
+    // Renames the element's title.
+    function renameElement(thiss){
+        let $rename_element = $('#rename_element');
+        let $input = $rename_element.find("input");
+        let $element = $rename_element.prev();
+
+        if ($element.attr("class") !== "row element"){
+            $element = $element.prev();
+        }
+
+        if ($input.val()){
+            $element.find(".title").text($input.val());
+
+            $input.val("");
+            hideRenameElementInput();
+        }
+    }
+
+    // Hides the input field for renaming an element.
+    function hideRenameElementInput(){
+        $('#rename_element').slideUp();
+    }
+
+    // Removes the element from the DOM.
+    function removeElement(thiss){
+        let $element = thiss.closest('.element');
+        hideElementModifyInputs($element);
+        $element.remove();
+    }
+
+    // Hides input fields after a given element, where you can modify that element (rename, move)
+    function hideElementModifyInputs($element){
+        let $rename_element = $('#rename_element');
+        let $move_element = $('#move_element');
+        let $element_next = $element.next();
+        let $element_second_next = $element_next.next();
+
+        if ( ($element_next.attr("id") === "rename_element" ||
+            $element_second_next.attr("id") === "rename_element") &&
+            $rename_element.is(":visible") ){
+
+            $rename_element.hide();
+
+        }
+        if ( ($element_next.attr("id") === "move_element" ||
+            $element_second_next.attr("id") === "move_element") &&
+            $move_element.is(":visible") ){
+
+            $move_element.hide();
+        }
+    }
+</script>
+</body>
+</html>

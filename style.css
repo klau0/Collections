@@ -1,0 +1,279 @@
+header, footer{
+    background-color: #90b7ff;
+    height: 8vh;
+    position: relative;
+}
+
+.flexbox:hover{
+    cursor: pointer;
+}
+
+.collection_container{
+    max-width: 50% !important;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.elements_container{
+    max-width: 70%;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.element{
+    background-color: #d2f99d;
+    border: 2px solid #dddddd;
+    border-radius: 15px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 7px;
+    margin-top: 5px;
+}
+
+.new_element{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 10px 10px;
+    justify-content: space-evenly;
+    margin-top: 6px;
+}
+
+.flexbox{
+    border-radius: 20px 20px;
+    padding: 10px 20px;
+    background-color: #b8f4ff;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 2px solid #dddddd;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.image{
+    padding: 5px 0 !important;
+}
+
+img{
+    box-shadow: 0 0 5px #0081b1;
+}
+
+.delete label input{
+    transform : scale(1.3);
+    accent-color: #fc3a3a;
+}
+
+.delete{
+    margin: 0 0 !important;
+    padding: 5px 0 0!important;
+}
+
+.more{
+    width: max-content !important;
+    padding: 0 5px !important;
+    background-color: white;
+    border: 2px solid #dddddd;
+    border-radius: 5px 5px;
+}
+
+.more:hover{
+    border:2px solid #969596;
+}
+
+.more span{
+    width: 1em
+}
+
+.title{
+    padding: 7px 7px;
+    box-shadow: 0 0 5px #0081b1;
+    background-color: white;
+    border-radius: 10px 10px;
+    font-weight: 550;
+    width: max-content;
+}
+
+.flex_row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#collection_rename{
+    margin-left: 10px;
+}
+
+.rename_collection_btn{
+    max-width: max-content;
+    padding: 0 0 !important;
+    background-color: unset;
+    border-radius: 5px 5px;
+    border: none;
+    font-size: 21px;
+    margin-left: 10px;
+}
+
+.rename_collection_btn span{
+    color: #008403;
+}
+
+.rename_collection_btn:hover{
+    font-size: 25px;
+}
+
+.topic{
+    padding: 7px 7px;
+    box-shadow: 0 0 5px #0081b1;
+    background-color: white;
+    border-radius: 10px 10px;
+    margin: 10px 0;
+    max-width: max-content;
+}
+
+.green{
+    color: #027e4b;
+}
+
+.date{
+    width: max-content;
+    font-style: italic;
+}
+.dropdown_btn{
+    border: none;
+    width: 100%;
+    background-color: white;
+    padding: 5px !important;
+    margin: 0;
+    font-size: 16px;
+}
+
+.collection_modify_btn{
+    border: none;
+    border-radius: 5px 5px;
+    padding: 5px 5px;
+    background-color: #725aeb;
+    color: white;
+    width: max-content;
+    display: block;
+    margin: 30px auto 10px;
+    font-size: 20px;
+}
+
+#delete_many{
+    background-color: #fe4e00;
+}
+
+#delete_many:hover{
+    background-color: #d74200;
+}
+
+#collection_form{
+    max-width: 30% !important;
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+#collection_form > *{
+    margin-top: 10px;
+}
+
+.new_element form{
+    padding: 0 7px 0 0 !important;
+}
+
+#new_element input{
+    margin-bottom: 10px;
+}
+
+.save, .not_show{
+    min-width: max-content;
+    max-width: max-content;
+    padding: 0 3px !important;
+    background-color: #50ae00;
+    border-radius: 5px 5px;
+    border: none;
+}
+
+.not_show{
+    background-color: #fc4d4d;
+}
+
+.save span, .not_show span{
+    color: white;
+}
+
+.save:hover{
+    background-color: #3a7f00;
+}
+
+.not_show:hover{
+    background-color: #fb2626;
+}
+
+#rename_collection_btn, #hide_collection_btn{
+   height: min-content;
+    margin-left: 5px;
+}
+
+#collection_form input[type="button"]{
+    background-color: #03b87c;
+    margin: 20px auto;
+}
+
+#collection_form input[type="button"]:hover{
+    background-color: #029162;
+}
+
+#fake_file_upload{
+    background-color: #725aeb;
+    border: none;
+    border-radius: 5px 5px;
+    padding: 3px 7px;
+    margin-left: 2px;
+}
+
+#fake_file_upload:hover{
+    background-color: #5b1adc;
+}
+
+#fake_file_upload span{
+    color: white;
+}
+
+#new_collection span{
+    padding-left: 3px;
+}
+
+#new_collection{
+    margin: 30px auto 0 !important;
+}
+
+#new_collection:hover{
+    background-color: #5b1adc;
+}
+
+.add_element{
+    margin: 5px auto;
+    padding: 0 2px;
+    width: max-content;
+    display: block;
+    background-color: #139490;
+    border-radius: 5px 5px;
+    border: none;
+}
+
+.add_element:hover{
+    background-color: #0f716e;
+}
+
+.add_element span{
+    color: white;
+    font-size: 22px;
+}
